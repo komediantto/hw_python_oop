@@ -38,10 +38,10 @@ class Record:
         if date == None:
             self.date = dt.date.today()
         else:
-            self.date = dt.datetime.strptime(date, "%d.%m.%Y").date()    
+            self.date = dt.datetime.strptime(date, '%d.%m.%Y').date()    
 
     def show(self):
-        print(f"Сумма: {self.amount}, Цель: {self.comment}, Дата: {self.date}")
+        print(f'Сумма: {self.amount}, Цель: {self.comment}, Дата: {self.date}')
     pass
 
 class CaloriesCalculator(Calculator):
@@ -52,8 +52,8 @@ class CaloriesCalculator(Calculator):
         today_cal = Calculator.get_today_stats(self)
         remain = self.limit - today_cal
         if today_cal < self.limit:    
-            return ("Сегодня можно съесть что-нибудь ещё, "
-             f"но с общей калорийностью не более {remain} кКал")
+            return ('Сегодня можно съесть что-нибудь ещё, '
+             f'но с общей калорийностью не более {remain} кКал')
         else:
             return('Хватит есть!')
 
@@ -82,7 +82,7 @@ class CashCalculator(Calculator):
 
         if today_sum < self.limit:
             remains = round((self.limit - today_sum)/rate, 2)    
-            return (f"На сегодня осталось {(remains)} {money_name}")
+            return (f'На сегодня осталось {(remains)} {money_name}')
         elif today_sum == self.limit:
             return ('Денег нет, держись')
         else:
