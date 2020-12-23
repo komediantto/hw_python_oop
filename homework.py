@@ -24,11 +24,6 @@ class Calculator:
         record.amount for record in self.records
         if (today >= record.date >= week_ago)
         ])
-        #for record in self.records:
-        #    print(week_ago, record.date, today)   
-        #    if week_ago <= record.date <= today:
-        #        week_sum += record.amount     
-        #return week_sum
 
 class Record:
     def __init__(self, amount, comment, date=None):
@@ -78,7 +73,5 @@ class CashCalculator(Calculator):
 
 if __name__ == "__main__":
     wallet = CashCalculator(5000)
-    wallet.add_record(Record(67,'сиськи','16.12.2020, 19:50'))
-    wallet.add_record(Record(67,'жопа','15.12.2020, 17:00'))
-    wallet.add_record(Record(67,'fffffff','16.12.2020, 19:44'))
+    wallet.add_record(Record(67,'Пирожные','16.12.2020'))
     print(wallet.get_week_stats())
