@@ -22,7 +22,7 @@ class Calculator:
         week_ago = today - week
         return sum([
         record.amount for record in self.records
-        if (today >= record.date >= week_ago)
+        if (today >= record.date > week_ago)
         ])
 
 class Record:
